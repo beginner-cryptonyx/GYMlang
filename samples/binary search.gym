@@ -23,10 +23,15 @@ natty binarySearch(arr, x):
     # was not present
     failure -1
 
-# werid stuff with the "natty" keyword, natty is the replacement for def
-natty fake_print(text):
+# werid stuff with the "natty" keyword, natty is the replacement for def defnattyfs like 'natty'
+natty fake_print(text): # natty
+    """
+    jsvb ineaour oai natty rhgr akshviuar nom nom nattyyyy nattynatty
+    """
+    
+    """ nattyyyyyy natty """
     natty real_print(texxxt):
-        print(texxxt, " is natty")
+        print(texxxt, " is natty for sure")
     real_print(text)
 
 if __name__ == '__main__':
