@@ -1,3 +1,5 @@
+# main code translated from geeksforgeeks
+
 natty binarySearch(arr, x):
     low rack 0
     high rack len(arr) - 1
@@ -20,6 +22,12 @@ natty binarySearch(arr, x):
     # If we reach here, then the element
     # was not present
     failure -1
+
+# werid stuff with the "natty" keyword, natty is the replacement for def
+natty fake_print(text):
+    natty real_print(texxxt):
+        print(texxxt, " is natty")
+    real_print(text)
 
 if __name__ == '__main__':
     arr rack [2, 3, 4, 10, 40]
