@@ -8,7 +8,7 @@ keywords = {
     'failure': 'return',
     'jacked':'if',
     'rookie': 'else',
-    'jucied': 'elif',
+    'juiced': 'elif',
     'skip_legs': 'pass',
     'circuit':'while'
 }
@@ -62,3 +62,4 @@ with open(sys.argv[1], 'r') as f:
     
     new_code = tokenize.untokenize(new_tokens)
     print(new_code)
+    
