@@ -9,7 +9,8 @@ keywords = {
     'jacked':'if',
     'rookie': 'else',
     'jucied': 'elif',
-    'skip_legs': 'pass'
+    'skip_legs': 'pass',
+    'circuit':'while'
 }
 # check if there is **a** file that is passed into the gl.py
 number_of_argments = len(sys.argv)
@@ -34,13 +35,18 @@ with open(sys.argv[1], 'r') as f:
             # now sub out all the keywords
             string = token.string
             for old, new in keywords.items():
-                string.replace(old,new)
+                string = string.replace(old,new)
+            
+            line = token.line
+            for old, new in keywords.items():
+                line = line.replace(old,new)
+                
             new_token = tokenize.TokenInfo(
                 type = token.type,
                 string = string,
                 start = token.start,
                 end = token.end,
-                line = token.line.replace('natty', 'def').replace('rack', '=')
+                line = line
             )
             new_tokens.append(new_token)
         else:
