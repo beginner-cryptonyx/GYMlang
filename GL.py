@@ -10,7 +10,11 @@ keywords = {
     'rookie': 'else',
     'juiced': 'elif',
     'skip_legs': 'pass',
-    'circuit':'while'
+    'circuit':'while',
+    'rack': '=',
+    'ego_lift': 'try',
+    'injury': 'except',
+    'burnout': 'finally'
 }
 # check if there is **a** file that is passed into the gl.py
 number_of_argments = len(sys.argv)
@@ -62,4 +66,5 @@ with open(sys.argv[1], 'r') as f:
     
     new_code = tokenize.untokenize(new_tokens)
     print(new_code)
-    
+    exec(new_code)
+

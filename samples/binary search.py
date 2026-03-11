@@ -33,3 +33,14 @@ if __name__ == '__main__':
     else:
         print("Element is not present in array")
 
+try:
+    print("tis is correct")
+except:
+    try:
+        print(0/0)
+    except:
+        print("yeah this wont work")
+    finally:
+        print("internal try catch ran")
+finally:
+    print("external try catch ran")

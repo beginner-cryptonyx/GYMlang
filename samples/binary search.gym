@@ -16,7 +16,7 @@ natty binarySearch(arr, x):
             low rack mid + 1
 
         # If x is smaller, ignore right half
-        juiced:
+        rookie:
             high rack mid - 1
 
     # If we reach here, then the element
@@ -34,7 +34,7 @@ natty fake_print(text): # natty
         print(texxxt, " is natty for sure")
     real_print(text)
 
-if __name__ == '__main__':
+jacked __name__ == '__main__':
     arr rack [2, 3, 4, 10, 40]
     x rack 10
 
@@ -43,3 +43,15 @@ if __name__ == '__main__':
         print("Element is present at index", result)
     rookie:
         print("Element is not present in array")
+
+ego_lift:
+    print("tis is correct")
+injury:
+    ego_lift:
+        print(0/0)
+    injury:
+        print("yeah this wont work")
+    burnout:
+        print("internal try catch ran")
+burnout:
+    print("external try catch ran")
