@@ -55,3 +55,9 @@ injury:
         print("internal try catch ran")
 burnout:
     print("external try catch ran")
+
+rep i in range(100):
+    jacked i % 2 == 0:
+        flex(i, end=', ')
+    rookie:
+        skip_legs

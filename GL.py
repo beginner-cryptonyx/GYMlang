@@ -3,6 +3,19 @@ import os
 import tokenize
 import io
 
+TYPE_IGNORE = 56
+TYPE_COMMENT = 57
+FSTRING_START = 59
+FSTRING_MIDDLE = 60
+FSTRING_END = 61
+TSTRING_START = 62
+TSTRING_MIDDLE = 63
+TSTRING_END = 64
+COMMENT = 65
+STRING = 3
+
+ignore_list = [TYPE_IGNORE, TYPE_COMMENT, FSTRING_START, FSTRING_MIDDLE, FSTRING_END, TSTRING_START, TSTRING_MIDDLE, TSTRING_END, COMMENT, STRING]
+
 keywords = {
     'natty':'def',
     'failure': 'return',
@@ -14,28 +27,40 @@ keywords = {
     'rack': '=',
     'ego_lift': 'try',
     'injury': 'except',
-    'burnout': 'finally'
+    'burnout': 'finally',
+    'rep': 'for',
+    'workout': 'class',
+    'superset' : 'with',
+    'flex': 'print'
 }
 # check if there is **a** file that is passed into the gl.py
 number_of_argments = len(sys.argv)
 if number_of_argments != 2:
     print("incorrect argument passed to transcriber")
+    sys.exit(1)
 
 # check if path is valud
 if not os.path.isfile(sys.argv[1]):
     print("File not found")
+    sys.exit(1)
+
+# check file extention
+if sys.argv[1].split('.')[-1] != 'gympy':
+    print("Incorrect File Type Provided")
+    sys.exit(1)
 
 # print the content of the file
 with open(sys.argv[1], 'r') as f:
     source = f.read()
     tokens = list(tokenize.generate_tokens(io.StringIO(source).readline))
 
-    for token in tokens:
-        print(token)
+    # for token in tokens:
+    #     print(token)
 
     new_tokens = []
     for token in tokens:
-        if token.type not in [59,60,61,62,63,64,65,3]:
+        if token.type not in ignore_list:
+
             # now sub out all the keywords
             string = token.string
             for old, new in keywords.items():
@@ -55,16 +80,10 @@ with open(sys.argv[1], 'r') as f:
             new_tokens.append(new_token)
         else:
             new_tokens.append(token)
-    print('/-------/')
-    print('/-------/')
-    print('/-------/')
-    print('/-------/')
-    print('/-------/')
-    
-    for token in new_tokens:
-        print(token)
+
+    # for token in new_tokens:
+    #     print(token)
     
     new_code = tokenize.untokenize(new_tokens)
-    print(new_code)
+    # print(new_code)
     exec(new_code)
-
